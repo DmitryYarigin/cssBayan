@@ -17,9 +17,13 @@ body {
 
 .accordion-item {
     border-top: 1px solid rgb(71, 67, 67);
-    /* margin-bottom: 30px; */
     max-width: 85%;
     margin: 0 auto 40px;
+}
+
+.accordion-item:hover .accordion-item__image{
+    min-width: 300px;
+    max-width: 400px;
 }
 
 .accordion-item__header {
@@ -36,6 +40,7 @@ body {
 .accordion-item__image {
     display: block;
     margin: 0 auto;
-    max-width: 400px;
-    min-height: 300px;
+    max-width: 0px;
+    min-height: 0px;
+    transition: all .6s;
 }
