@@ -15,15 +15,14 @@ body {
     margin-bottom: 50px;
 }
 
-.accordion-item {
-    border-top: 1px solid rgb(71, 67, 67);
-    max-width: 85%;
-    margin: 0 auto 40px;
+.accordion-items {
+    margin: 0 auto;
+    width: 70%;
 }
 
-.accordion-item:hover .accordion-item__image{
-    min-width: 300px;
-    max-width: 400px; 
+.accordion-item {
+    border-top: 1px solid rgb(71, 67, 67);
+    margin: 0 auto;
 }
 
 .accordion-item__header {
@@ -33,18 +32,39 @@ body {
     align-items: center;
 }
 
-.accordeon-input {
+.accordion-item__name {
+    color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom:  2rem;
+}
+
+.accordion-input {
     appearance: none;
 }
 
-.accordeon-input:checked ~ .accordion-item__image{
-    max-width: 300px; 
-    max-width: 400px;
+.accordion-input:hover ~ .accordion-item__label .accordion-item__img { 
+    opacity: 1;
+    max-height: 30rem;
+    padding-bottom:  2rem;
+} 
+
+.accordion-input:checked ~ .accordion-item__label .accordion-item__img { 
+    opacity: 1;
+    max-height: 30rem;
+    padding-bottom:  2rem;
 }
 
-.accordion-item__header-title {
-    display: flex;
-    justify-content: space-between;
+.accordion-input:checked ~ .accordion-item__label .accordion-item__name {
+    color: black;
+}
+
+.accordion-input:hover ~ .accordion-item__label .accordion-item__name .icon {
+    transform: rotate(45deg);
+}
+
+.accordion-item__label {
     font-size: 24px;
     width: 100%;
     margin-top: 10px;
@@ -52,19 +72,37 @@ body {
     cursor: pointer;
 }
 
-.accordion-item__image {
-    display: block;
-    margin: 0 auto;
-    max-width: 0px; 
-    min-height: 0px;
+.accordion-item__img {
+    opacity: 0;
+    margin: auto;
+    max-height: 0;
+    max-width: 30rem;
+    overflow: hidden;
+
     transition: all .6s;
 }
 
 .icon {
-    display: none;
-    margin-left: 160px;
+    color: black;
+    opacity: 0;
+    transition: .2s;
 }
 
-.accordion-item:hover .icon {
-    display: block;
+
+
+.accordion-item__image {
+    max-height: 30rem;
+    max-width: 30rem;
+}
+
+@media (min-width: 821px) {
+    .accordion-items:hover .icon {
+        opacity: 1;
+    }
+    .accordion-item:hover .icon {
+        opacity: 1;
+    }
+    .accordion-items:hover .accordion-item__name {
+        color: black;
+    }
 }
